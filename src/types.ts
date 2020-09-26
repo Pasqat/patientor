@@ -18,3 +18,7 @@ export interface Patient {
   ssn?: string;
   dateOfBirth?: string;
 }
+
+export interface PatientDetails extends Patient {
+  entries?: string[];
+}
