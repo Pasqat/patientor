@@ -14,7 +14,11 @@ const PatientPage: React.FC = () => {
     console.log("patient", patient);
 
     React.useEffect(() => {
+        if (patient?.id && patient?.id === id) {
+            return;
+        }
         const fetchPatient = async () => {
+            console.log('fetching');
             try {
                 const {data: patientFromApi} = await axios.get<PatientDetails>(
                     `${apiBaseUrl}/patients/${id}`
